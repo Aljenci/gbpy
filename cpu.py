@@ -186,8 +186,15 @@ class Cpu:
     SP = property(get_sp, set_sp)
     PC = property(get_pc, set_pc)
 
+    # execute a single instruction
+    def tick(self):
+        pass
 
 if __name__ == "__main__":
     cpu = Cpu()
-    cpu.A = 0x10
-    print(cpu.A)
+    cpu.BC = 0x0101
+    print(cpu.B, cpu.C, cpu.BC)
+
+    cpu.B = 0x10
+    cpu.C = 0x10
+    print(cpu.B, cpu.C, cpu.BC)
